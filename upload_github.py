@@ -2,6 +2,11 @@ import os
 import subprocess
 import requests
 
+# Buat file .gitignore di folder project agar file upload_github.py tidak ikut ter-upload ke GitHub:
+
+# echo "upload_github.py" >> .gitignore
+# echo ".env" >> .gitignore
+
 # =========================================================
 # KONFIGURASI (Isi data Anda di sini)
 # =========================================================
@@ -73,7 +78,7 @@ def upload_to_github(token, clone_url, folder_path):
     run_cmd(f"git remote add origin {auth_url}")
     
     # Push ke GitHub
-    if run_cmd("git push -u origin main"):
+    if run_cmd("git push -u origin main --force"):
         print("[✓] SEMUA FILE BERHASIL DIUPLOAD KE GITHUB!")
     else:
         print("[X] Gagal mengunggah file ke GitHub.")
