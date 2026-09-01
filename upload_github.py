@@ -5,7 +5,7 @@ import requests
 # =========================================================
 # KONFIGURASI (Isi data Anda di sini)
 # =========================================================
-GITHUB_TOKEN = "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"  # Masukkan Personal Access Token Anda
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN") or input("Masukkan GitHub Token Anda: ")  # Masukkan Personal Access Token Anda
 REPO_NAME = "9router-byKusnadi"                         # Nama repo yang ingin dibuat
 IS_PRIVATE = False                                          # True jika ingin repo Privat, False jika Publik
 FOLDER_PATH = "."                                           # Path folder yang ingin diupload ("." untuk folder saat ini)

@@ -86,3 +86,5 @@ graphify-out/*
 .codegraph/
 .PR/
 .next-analyze/*
+upload_github.py
+.env
